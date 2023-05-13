@@ -1,0 +1,33 @@
+<div *ngIf="user; else loading">
+    <div style="width: 80%;height: 400px;background-color: rgba(0, 0, 0, 0.765);border-radius: 100px;box-shadow:1px 1px 10px #FD8469;margin-left: 270px;margin-top:240px;">
+        <img src="assets/imgs/man.png" style="width:150px;height: 150px;border-radius: 50%;margin-top:30px">
+        <table  class="w-75 m-auto mt-4 table table-dark fs-4 table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.email}}</td>
+                <td><img routerLink="/users/{{user.id}}" src="assets/imgs/info.png" style="width: 50px;height: 50px; cursor:pointer"></td>
+                <td><img routerLink="/update/{{user.id}}" src="assets/imgs/edit.png" style="width: 50px;height: 50px; cursor:pointer"></td>
+                <td><img routerLink="/delete/{{user.id}}" src="assets/imgs/trash.png" style="width: 50px;height: 50px; cursor:pointer" (click)="delete()"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<ng-template #loading>
+    <img src="assets/imgs/loading-loader.gif">
+</ng-template>
