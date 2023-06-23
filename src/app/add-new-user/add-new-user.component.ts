@@ -21,6 +21,7 @@ export class AddNewUserComponent {
       let user = {name:this.validation.controls['name'].value,age:this.validation.controls['age'].value,email:this.validation.controls['email'].value}
       this.uService.addUser(user).subscribe()
     }
+    console.log(this.validation);
     this.validation.reset()
   }
 

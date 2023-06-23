@@ -14,7 +14,6 @@ export class UserDetailsComponent implements OnInit {
 
   constructor(public uService:UserService,router:ActivatedRoute){
     this.id = router.snapshot.params['id']
-    console.log(router);
   }
 
   ngOnInit(): void {
